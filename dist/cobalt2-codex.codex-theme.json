@@ -1,0 +1,20 @@
+{
+  "codeThemeId": "ayu",
+  "theme": {
+    "surface": "#193549",
+    "ink": "#FFFFFF",
+    "accent": "#FFC600",
+    "contrast": 92,
+    "fonts": {
+      "code": "Operator Mono, VictorMono Nerd Font Mono, VictorMono Nerd Font, JetBrainsMono Nerd Font Mono, JetBrainsMono Nerd Font, FiraCode Nerd Font Mono, Fira Code, SF Mono, Menlo, Monaco, Consolas, monospace",
+      "ui": "SF Pro Text, Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif"
+    },
+    "opaqueWindows": true,
+    "semanticColors": {
+      "diffAdded": "#3AD900",
+      "diffRemoved": "#FF628C",
+      "skill": "#FF68B8"
+    }
+  },
+  "variant": "dark"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "codex-cobalt-gold-theme",
+  "version": "0.4.0",
+  "description": "Cobalt2-inspired Codex Desktop theme with safe runtime Markdown styling.",
+  "author": {
+    "name": "ChainShield AI"
+  },
+  "homepage": "https://github.com/chainshieldai/codex-cobalt-gold-theme",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "theme",
+    "cobalt2",
+    "appearance"
+  ],
+  "interface": {
+    "displayName": "Cobalt Gold for Codex",
+    "shortDescription": "Cobalt2-inspired Codex Desktop appearance",
+    "longDescription": "A community package with Codex Desktop Appearance import artifacts and safe runtime Markdown styling inspired by Wes Bos's Cobalt2 palette.",
+    "developerName": "ChainShield AI",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ],
+    "brandColor": "#FFC600",
+    "defaultPrompt": [
+      "Import the Cobalt Gold for Codex appearance theme into Codex Desktop"
+    ],
+    "screenshots": []
+  }
+}

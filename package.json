@@ -1,0 +1,65 @@
+{
+  "name": "codex-cobalt-gold-theme",
+  "version": "0.4.0",
+  "description": "Cobalt2-inspired Codex Desktop theme with safe runtime Markdown styling.",
+  "type": "module",
+  "license": "MIT",
+  "author": "ChainShield AI",
+  "homepage": "https://github.com/chainshieldai/codex-cobalt-gold-theme#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chainshieldai/codex-cobalt-gold-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chainshieldai/codex-cobalt-gold-theme/issues"
+  },
+  "keywords": [
+    "codex",
+    "codex-desktop",
+    "theme",
+    "cobalt2",
+    "cobalt",
+    "markdown",
+    "operator-mono"
+  ],
+  "files": [
+    ".codex-plugin/plugin.json",
+    "CHANGELOG.md",
+    "INSTALL.md",
+    "LICENSE",
+    "NOTICE.md",
+    "PUBLISHING.md",
+    "README.md",
+    "SAFETY.md",
+    "dist/cobalt2-codex-full.codex-theme.json",
+    "dist/cobalt2-codex-paste.encoded.txt",
+    "dist/cobalt2-codex-paste.txt",
+    "dist/cobalt2-codex.codex-theme.json",
+    "docs/MARKDOWN_OVERRIDE_AUDIT.md",
+    "docs/RUNTIME_CSS_INJECTION_PLAN.md",
+    "overrides/cobalt2-markdown-overrides.css",
+    "scripts/apply-font-settings.mjs",
+    "scripts/build-theme.mjs",
+    "scripts/copy-theme.mjs",
+    "scripts/inject-runtime-css.mjs",
+    "scripts/launch-runtime-test.mjs",
+    "scripts/start-runtime-css.mjs",
+    "scripts/stop-runtime-css.mjs",
+    "scripts/validate-theme.mjs",
+    "theme.schema.json",
+    "theme.source.json"
+  ],
+  "scripts": {
+    "apply:fonts": "node scripts/apply-font-settings.mjs",
+    "build": "node scripts/build-theme.mjs",
+    "copy": "node scripts/copy-theme.mjs",
+    "inject:runtime-css": "node scripts/inject-runtime-css.mjs",
+    "launch:runtime-test": "node scripts/launch-runtime-test.mjs",
+    "start:runtime-css": "node scripts/start-runtime-css.mjs",
+    "stop:runtime-css": "node scripts/stop-runtime-css.mjs",
+    "prepack": "npm run build && npm run validate",
+    "pack:dry-run": "npm pack --dry-run",
+    "validate": "node scripts/validate-theme.mjs",
+    "watch:runtime-css": "node scripts/inject-runtime-css.mjs --watch"
+  }
+}

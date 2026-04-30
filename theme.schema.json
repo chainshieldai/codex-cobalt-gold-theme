@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cobalt Gold Codex Theme Source",
+  "type": "object",
+  "required": ["name", "variant", "codexDesktop", "fontSizes", "palette"],
+  "properties": {
+    "name": { "type": "string" },
+    "variant": { "enum": ["dark", "light"] },
+    "description": { "type": "string" },
+    "author": { "type": "string" },
+    "version": { "type": "string" },
+    "codexDesktop": {
+      "type": "object",
+      "required": [
+        "codeThemeId",
+        "surface",
+        "ink",
+        "accent",
+        "contrast",
+        "translucentSidebar",
+        "semanticColors",
+        "uiFontFamily",
+        "codeFontFamily"
+      ],
+      "properties": {
+        "codeThemeId": { "type": "string", "minLength": 1 },
+        "surface": { "$ref": "#/$defs/hexColor" },
+        "ink": { "$ref": "#/$defs/hexColor" },
+        "accent": { "$ref": "#/$defs/hexColor" },
+        "contrast": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "translucentSidebar": { "type": "boolean" },
+        "semanticColors": {
+          "type": "object",
+          "required": ["diffAdded", "diffRemoved", "skill"],
+          "properties": {
+            "diffAdded": { "$ref": "#/$defs/hexColor" },
+            "diffRemoved": { "$ref": "#/$defs/hexColor" },
+            "skill": { "$ref": "#/$defs/hexColor" }
+          },
+          "additionalProperties": false
+        },
+        "uiFontFamily": { "type": "string" },
+        "codeFontFamily": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "fontSizes": {
+      "type": "object",
+      "required": ["sansFontSize", "codeFontSize"],
+      "properties": {
+        "sansFontSize": { "type": "integer", "minimum": 10, "maximum": 24 },
+        "codeFontSize": { "type": "integer", "minimum": 10, "maximum": 28 }
+      },
+      "additionalProperties": false
+    },
+    "palette": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/hexColor" }
+    }
+  },
+  "$defs": {
+    "hexColor": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    }
+  }
+}

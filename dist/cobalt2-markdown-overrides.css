@@ -1,0 +1,184 @@
+/* codex-cobalt2-markdown-overrides:start */
+:root,
+:host {
+  --cobalt2-md-bg: #193549;
+  --cobalt2-md-bg-deep: #122738;
+  --cobalt2-md-border: #234e6d;
+  --cobalt2-md-fg: #ffffff;
+  --cobalt2-md-muted: #9effff;
+  --cobalt2-md-yellow: #ffc600;
+  --cobalt2-md-orange: #ff9d00;
+  --cobalt2-md-pink: #ff68b8;
+  --cobalt2-md-green: #3ad900;
+  --cobalt2-md-cyan: #80fcff;
+  --cobalt2-md-blue: #0088ff;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]),
+[class*="_markdownContent_"] {
+  color: var(--cobalt2-md-fg) !important;
+  font-family: var(--font-sans, "SF Pro Text", Inter, -apple-system, BlinkMacSystemFont, sans-serif) !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) :is(h1, h2, h3, h4, h5, h6) {
+  letter-spacing: 0 !important;
+  line-height: 1.15 !important;
+  font-family: "SF Pro Display", "SF Pro Text", Inter, -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-weight: 750 !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) h1 {
+  color: var(--cobalt2-md-yellow) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--cobalt2-md-yellow) 38%, transparent) !important;
+  padding-bottom: 0.22em !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) h2 {
+  color: var(--cobalt2-md-orange) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--cobalt2-md-orange) 28%, transparent) !important;
+  padding-bottom: 0.16em !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) h3 {
+  color: var(--cobalt2-md-cyan) !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) h4 {
+  color: var(--cobalt2-md-orange) !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) h5,
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) h6 {
+  color: var(--cobalt2-md-green) !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) a {
+  color: var(--cobalt2-md-cyan) !important;
+  font-style: italic !important;
+  text-decoration-color: var(--cobalt2-md-yellow) !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 0.18em !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) a:hover {
+  color: var(--cobalt2-md-yellow) !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) strong {
+  color: var(--cobalt2-md-yellow) !important;
+  font-weight: 700 !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) em {
+  color: var(--cobalt2-md-orange) !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) :not(pre):not([class*="overflow-y-auto"]) > code,
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) [class*="_inlineMarkdown_"] {
+  color: var(--cobalt2-md-yellow) !important;
+  background: color-mix(in srgb, var(--cobalt2-md-bg-deep) 86%, transparent) !important;
+  border: 1px solid color-mix(in srgb, var(--cobalt2-md-border) 74%, transparent) !important;
+  border-radius: 4px !important;
+  padding: 0.08em 0.32em !important;
+  font-family: "Operator Mono", var(--font-mono, "SF Mono", Menlo, monospace) !important;
+  font-size: 0.92em !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) pre,
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) pre[class*="language-"] {
+  color: var(--cobalt2-md-fg) !important;
+  background: var(--cobalt2-md-bg-deep) !important;
+  border: 1px solid var(--cobalt2-md-border) !important;
+  border-radius: 8px !important;
+  box-shadow: inset 3px 0 0 var(--cobalt2-md-yellow) !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) pre code,
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) code[class*="language-"],
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) code.hljs {
+  color: var(--cobalt2-md-fg) !important;
+  background: transparent !important;
+  font-family: "Operator Mono", var(--font-mono, "SF Mono", Menlo, monospace) !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) [class*="bg-token-text-code-block-background"] {
+  color: var(--cobalt2-md-fg) !important;
+  background: var(--cobalt2-md-bg-deep) !important;
+  border: 1px solid var(--cobalt2-md-border) !important;
+  border-radius: 8px !important;
+  box-shadow: inset 3px 0 0 var(--cobalt2-md-yellow) !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) [class*="bg-token-text-code-block-background"] code {
+  color: var(--cobalt2-md-fg) !important;
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  font-family: "Operator Mono", var(--font-mono, "SF Mono", Menlo, monospace) !important;
+  font-size: inherit !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) blockquote {
+  color: var(--cobalt2-md-muted) !important;
+  background: color-mix(in srgb, var(--cobalt2-md-bg-deep) 72%, transparent) !important;
+  border-left: 3px solid var(--cobalt2-md-yellow) !important;
+  border-radius: 0 6px 6px 0 !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) hr {
+  border-color: color-mix(in srgb, var(--cobalt2-md-cyan) 38%, transparent) !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) th {
+  color: var(--cobalt2-md-yellow) !important;
+  background: var(--cobalt2-md-bg-deep) !important;
+}
+
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) td,
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) th,
+:is([class*="_markdownRoot_"], [class*="_markdownContent_"]) table {
+  border-color: var(--cobalt2-md-border) !important;
+}
+
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-comment,
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-quote {
+  color: var(--cobalt2-md-blue) !important;
+  font-style: italic !important;
+}
+
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-keyword,
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-formula,
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-literal {
+  color: var(--cobalt2-md-orange) !important;
+}
+
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-string,
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-regexp,
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-addition,
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-attribute,
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-meta-string {
+  color: var(--cobalt2-md-green) !important;
+}
+
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-built_in,
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-class .hljs-title,
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-type,
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-title {
+  color: var(--cobalt2-md-yellow) !important;
+}
+
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-number,
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-variable,
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-template-variable,
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-attr {
+  color: var(--cobalt2-md-pink) !important;
+}
+
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-symbol,
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-bullet,
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-link,
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-selector-id,
+:is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-meta {
+  color: var(--cobalt2-md-cyan) !important;
+}
+/* codex-cobalt2-markdown-overrides:end */

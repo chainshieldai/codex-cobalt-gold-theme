@@ -1,0 +1,42 @@
+{
+  "name": "Cobalt Gold for Codex",
+  "description": "A Cobalt2-inspired Codex Desktop appearance theme with gold-on-navy chrome and runtime Markdown styling.",
+  "author": "ChainShield AI",
+  "version": "0.4.0",
+  "variant": "dark",
+  "codeThemeId": "ayu",
+  "theme": {
+    "surface": "#193549",
+    "ink": "#FFFFFF",
+    "accent": "#FFC600",
+    "contrast": 92,
+    "fonts": {
+      "code": "Operator Mono, VictorMono Nerd Font Mono, VictorMono Nerd Font, JetBrainsMono Nerd Font Mono, JetBrainsMono Nerd Font, FiraCode Nerd Font Mono, Fira Code, SF Mono, Menlo, Monaco, Consolas, monospace",
+      "ui": "SF Pro Text, Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif"
+    },
+    "opaqueWindows": true,
+    "semanticColors": {
+      "diffAdded": "#3AD900",
+      "diffRemoved": "#FF628C",
+      "skill": "#FF68B8"
+    }
+  },
+  "sansFontSize": 14,
+  "codeFontSize": 15,
+  "palette": {
+    "blue": "#193549",
+    "blueDark": "#122738",
+    "blueHighlight": "#1F4662",
+    "blueHighlight2": "#234E6D",
+    "yellow": "#FFC600",
+    "hotPink": "#FF0088",
+    "blushPink": "#FF628C",
+    "orange": "#FF9D00",
+    "green": "#3AD900",
+    "cyan": "#80FCFF",
+    "pink": "#FF68B8",
+    "cream": "#FDF6E3",
+    "muted": "#9EFFFF",
+    "white": "#FFFFFF"
+  }
+}
