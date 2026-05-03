@@ -15,6 +15,7 @@ const state = JSON.parse(await readFile(statePath, "utf8"));
 const settings = source.codexDesktop;
 const fontSizes = source.fontSizes;
 const backupPath = `${statePath}.cobalt-gold-font-backup`;
+const codeThemeId = process.env.CODEX_COBALT_GOLD_CODE_THEME_ID ?? "night-owl";
 
 await copyFile(statePath, backupPath);
 
@@ -22,6 +23,7 @@ state.codeFontFamily = settings.codeFontFamily;
 state.sansFontFamily = settings.uiFontFamily;
 state.codeFontSize = fontSizes.codeFontSize;
 state.sansFontSize = fontSizes.sansFontSize;
+state.appearanceDarkCodeThemeId = codeThemeId;
 
 if (state.appearanceDarkChromeTheme?.fonts) {
   state.appearanceDarkChromeTheme.fonts.code = settings.codeFontFamily;
@@ -30,5 +32,8 @@ if (state.appearanceDarkChromeTheme?.fonts) {
 
 await writeFile(statePath, `${JSON.stringify(state)}\n`);
 
-console.log("Applied Codex font settings.");
+console.log("Applied Codex native appearance settings.");
+console.log(`Code theme: ${codeThemeId}`);
+console.log(`UI font size: ${fontSizes.sansFontSize}px`);
+console.log(`Code font size: ${fontSizes.codeFontSize}px`);
 console.log(`Backup: ${backupPath}`);

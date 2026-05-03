@@ -15,6 +15,34 @@ const required = [
   "variant"
 ];
 const hexColor = /^#[0-9A-Fa-f]{6}$/;
+const codeThemeIds = new Set([
+  "absolutely",
+  "ayu",
+  "catppuccin",
+  "codex",
+  "dark-plus",
+  "dracula",
+  "dracula-soft",
+  "everforest",
+  "github",
+  "gruvbox",
+  "houston",
+  "material-theme",
+  "material-theme-darker",
+  "material-theme-ocean",
+  "material-theme-palenight",
+  "monokai",
+  "night-owl",
+  "nord",
+  "one-dark-pro",
+  "rose-pine",
+  "slack-dark",
+  "solarized",
+  "synthwave-84",
+  "tokyo-night",
+  "vesper",
+  "vitesse-dark"
+]);
 const errors = [];
 
 for (const key of required) {
@@ -25,8 +53,8 @@ if (theme.variant !== "dark") {
   errors.push("variant must be dark for this theme");
 }
 
-if (theme.codeThemeId !== "ayu") {
-  errors.push("codeThemeId must be ayu");
+if (!codeThemeIds.has(theme.codeThemeId)) {
+  errors.push(`codeThemeId must be a known Codex built-in theme id; got ${theme.codeThemeId}`);
 }
 
 for (const key of ["surface", "ink", "accent"]) {

@@ -30,6 +30,7 @@ const host = args.get("host") ?? process.env.CODEX_COBALT2_DEBUG_HOST ?? "127.0.
 const pidPath = new URL("dist/runtime-css-watch.pid", root);
 const logPath = new URL("dist/runtime-css-watch.log", root);
 const injectorPath = new URL("scripts/inject-runtime-css.mjs", root);
+const applySettingsPath = new URL("scripts/apply-font-settings.mjs", root);
 
 if (!Number.isInteger(port) || port < 1024 || port > 65535) {
   console.error(`Invalid remote debugging port: ${port}`);
@@ -50,6 +51,21 @@ if (flags.has("dry-run")) {
   console.log(`Watcher log: ${logPath.pathname}`);
   console.log(`Watcher pid: ${pidPath.pathname}`);
   process.exit(0);
+}
+
+const applyResult = spawnSync(process.execPath, [applySettingsPath.pathname], {
+  cwd: root.pathname,
+  encoding: "utf8"
+});
+
+if (applyResult.status !== 0) {
+  const message = applyResult.stderr || applyResult.stdout || `appearance settings exited with ${applyResult.status}`;
+  console.error(message);
+  process.exit(applyResult.status ?? 1);
+}
+
+if (applyResult.stdout.trim()) {
+  console.log(applyResult.stdout.trim());
 }
 
 const endpointWasAlreadyLive = await endpointLive();

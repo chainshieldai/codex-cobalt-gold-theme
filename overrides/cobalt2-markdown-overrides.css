@@ -12,12 +12,49 @@
   --cobalt2-md-green: #3ad900;
   --cobalt2-md-cyan: #80fcff;
   --cobalt2-md-blue: #0088ff;
+  --cobalt2-md-ui-font-size: 20px;
+  --cobalt2-md-code-font-size: 20px;
+  --cobalt2-md-line-height: 30px;
+  --codex-chat-font-size: var(--cobalt2-md-ui-font-size) !important;
+  --cobalt2-code-fg: #ffffff;
+  --cobalt2-code-muted: #b7c7d3;
+  --cobalt2-code-comment: #7f96a6;
+  --cobalt2-code-keyword: #ff9d00;
+  --cobalt2-code-function: #ffc600;
+  --cobalt2-code-string: #91ff8e;
+  --cobalt2-code-type: #80fcff;
+  --cobalt2-code-tag: #00aaff;
+  --cobalt2-code-attribute: #ff68b8;
+  --cobalt2-code-constant: #ffc600;
+  --cobalt2-code-blue: #0088ff;
+  --vscode-editor-background: var(--cobalt2-md-bg) !important;
+  --vscode-editor-foreground: var(--cobalt2-code-fg) !important;
+  --vscode-editorLineNumber-foreground: #8aa1af !important;
+  --vscode-editorLineNumber-activeForeground: var(--cobalt2-md-yellow) !important;
+  --vscode-editorCursor-foreground: var(--cobalt2-md-yellow) !important;
+  --vscode-editorIndentGuide-background: color-mix(in srgb, var(--cobalt2-md-cyan) 22%, transparent) !important;
+}
+
+body {
+  font-size: var(--cobalt2-md-ui-font-size) !important;
+}
+
+button,
+input,
+select,
+textarea,
+[contenteditable="true"],
+[class*="text-size-chat"] {
+  font-size: var(--cobalt2-md-ui-font-size) !important;
+  line-height: var(--cobalt2-md-line-height) !important;
 }
 
 :is([class*="_markdownRoot_"], [class*="_markdownContent_"]),
 [class*="_markdownContent_"] {
   color: var(--cobalt2-md-fg) !important;
   font-family: var(--font-sans, "SF Pro Text", Inter, -apple-system, BlinkMacSystemFont, sans-serif) !important;
+  font-size: var(--cobalt2-md-ui-font-size) !important;
+  line-height: var(--cobalt2-md-line-height) !important;
 }
 
 :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) :is(h1, h2, h3, h4, h5, h6) {
@@ -99,6 +136,8 @@
   color: var(--cobalt2-md-fg) !important;
   background: transparent !important;
   font-family: "Operator Mono", var(--font-mono, "SF Mono", Menlo, monospace) !important;
+  font-size: var(--cobalt2-md-code-font-size) !important;
+  line-height: var(--cobalt2-md-line-height) !important;
 }
 
 :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) [class*="bg-token-text-code-block-background"] {
@@ -115,7 +154,8 @@
   border: 0 !important;
   padding: 0 !important;
   font-family: "Operator Mono", var(--font-mono, "SF Mono", Menlo, monospace) !important;
-  font-size: inherit !important;
+  font-size: var(--cobalt2-md-code-font-size) !important;
+  line-height: var(--cobalt2-md-line-height) !important;
 }
 
 :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) blockquote {
@@ -180,5 +220,182 @@
 :is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-selector-id,
 :is(.light .dark, .dark) :is([class*="_markdownRoot_"], [class*="_markdownContent_"]) .hljs-meta {
   color: var(--cobalt2-md-cyan) !important;
+}
+
+/* Bright Cobalt2 syntax layer for Shiki, highlight.js, and rendered source panes. */
+:is(
+  .shiki,
+  pre,
+  code,
+  [class*="code"],
+  [class*="Code"],
+  [class*="diff"],
+  [class*="Diff"],
+  [class*="bg-token-text-code-block-background"]
+) {
+  font-family: "Operator Mono", var(--font-mono, "SF Mono", Menlo, Monaco, Consolas, monospace) !important;
+}
+
+:is(
+  .shiki,
+  pre,
+  code,
+  [class*="code"],
+  [class*="Code"],
+  [class*="diff"],
+  [class*="Diff"],
+  [class*="bg-token-text-code-block-background"]
+) :is(span, code, pre) {
+  font-family: inherit !important;
+  text-shadow: none !important;
+}
+
+:is(.shiki, pre, code, [class*="code"], [class*="Code"], [class*="diff"], [class*="Diff"], [class*="bg-token-text-code-block-background"])
+  :is(code, pre, .line, [class*="line"]) {
+  color: var(--cobalt2-code-fg) !important;
+}
+
+:is(.shiki, pre, code, [class*="code"], [class*="Code"], [class*="diff"], [class*="Diff"], [class*="bg-token-text-code-block-background"])
+  :is(.hljs-comment, .hljs-quote, span[style*="#626a73" i], span[style*="#5c6773" i], span[style*="#6a737d" i], span[style*="#7f8490" i], span[style*="#7f96a6" i]) {
+  color: var(--cobalt2-code-comment) !important;
+  font-style: italic !important;
+}
+
+:is(.shiki, pre, code, [class*="code"], [class*="Code"], [class*="diff"], [class*="Diff"], [class*="bg-token-text-code-block-background"])
+  :is(.hljs-keyword, .hljs-built_in, .hljs-literal, .hljs-selector-tag, span[style*="#ff9d00" i], span[style*="#ff9e64" i], span[style*="#ffb454" i], span[style*="#f29e74" i], span[style*="#ff7733" i]) {
+  color: var(--cobalt2-code-keyword) !important;
+}
+
+:is(.shiki, pre, code, [class*="code"], [class*="Code"], [class*="diff"], [class*="Diff"], [class*="bg-token-text-code-block-background"])
+  :is(.hljs-title, .hljs-title.function_, .hljs-function .hljs-title, .hljs-section, span[style*="#ffc600" i], span[style*="#ffcc66" i], span[style*="#ffd580" i], span[style*="#e6b450" i], span[style*="#f9c859" i]) {
+  color: var(--cobalt2-code-function) !important;
+}
+
+:is(.shiki, pre, code, [class*="code"], [class*="Code"], [class*="diff"], [class*="Diff"], [class*="bg-token-text-code-block-background"])
+  :is(.hljs-string, .hljs-regexp, .hljs-addition, .hljs-meta-string, span[style*="#3ad900" i], span[style*="#91ff8e" i], span[style*="#bae67e" i], span[style*="#c2d94c" i], span[style*="#aad94c" i], span[style*="#a6e22e" i]) {
+  color: var(--cobalt2-code-string) !important;
+}
+
+:is(.shiki, pre, code, [class*="code"], [class*="Code"], [class*="diff"], [class*="Diff"], [class*="bg-token-text-code-block-background"])
+  :is(.hljs-type, .hljs-class .hljs-title, span[style*="#80fcff" i], span[style*="#9effff" i], span[style*="#95e6cb" i], span[style*="#5ccfe6" i], span[style*="#73d0ff" i]) {
+  color: var(--cobalt2-code-type) !important;
+}
+
+:is(.shiki, pre, code, [class*="code"], [class*="Code"], [class*="diff"], [class*="Diff"], [class*="bg-token-text-code-block-background"])
+  :is(.hljs-name, .hljs-tag, span[style*="#00aaff" i], span[style*="#0088ff" i], span[style*="#39bae6" i], span[style*="#59c2ff" i]) {
+  color: var(--cobalt2-code-tag) !important;
+}
+
+:is(.shiki, pre, code, [class*="code"], [class*="Code"], [class*="diff"], [class*="Diff"], [class*="bg-token-text-code-block-background"])
+  :is(.hljs-attr, .hljs-attribute, .hljs-property, .hljs-params, .hljs-variable, .hljs-template-variable, span[style*="#ff68b8" i], span[style*="#ff628c" i], span[style*="#f07178" i], span[style*="#ff8f40" i], span[style*="#d4bfff" i], span[style*="#d2a6ff" i]) {
+  color: var(--cobalt2-code-attribute) !important;
+  font-style: italic !important;
+}
+
+:is(.shiki, pre, code, [class*="code"], [class*="Code"], [class*="diff"], [class*="Diff"], [class*="bg-token-text-code-block-background"])
+  :is(.hljs-number, .hljs-symbol, .hljs-bullet, span[style*="#f78c6c" i], span[style*="#ffae57" i]) {
+  color: var(--cobalt2-code-constant) !important;
+}
+
+:is(.shiki, pre, code, [class*="code"], [class*="Code"], [class*="diff"], [class*="Diff"], [class*="bg-token-text-code-block-background"])
+  :is(span[style*="font-style:italic" i], span[style*="font-style: italic" i], span[style*="font-style: oblique" i]) {
+  font-style: italic !important;
+}
+
+/* Brightness boost for Codex's native VS Code/Monaco editor pane. */
+:is(.monaco-editor, .monaco-diff-editor) {
+  --cobalt2-native-fg: #f8fbff;
+  --cobalt2-native-muted: #b7d6e8;
+  --cobalt2-native-comment: #8fb4bd;
+  --cobalt2-native-keyword: #ff9d00;
+  --cobalt2-native-function: #ffc600;
+  --cobalt2-native-string: #91ff8e;
+  --cobalt2-native-type: #80fcff;
+  --cobalt2-native-blue: #35c7ff;
+  --cobalt2-native-constant: #ffb454;
+}
+
+:is(.monaco-editor, .monaco-diff-editor),
+:is(.monaco-editor, .monaco-diff-editor) :is(.view-lines, .view-line, .mtk1) {
+  color: var(--cobalt2-native-fg) !important;
+}
+
+:is(.monaco-editor, .monaco-diff-editor) :is(.line-numbers) {
+  color: #91aabe !important;
+}
+
+:is(.monaco-editor, .monaco-diff-editor) :is(.current-line, .active-line-number, .line-numbers.active-line-number) {
+  color: var(--cobalt2-native-function) !important;
+}
+
+:is(.monaco-editor, .monaco-diff-editor)
+  span:is(
+    [style*="#d6deeb" i],
+    [style*="#d7dbe0" i],
+    [style*="#bec5d4" i],
+    [style*="rgb(214, 222, 235)" i],
+    [style*="rgb(215, 219, 224)" i],
+    [style*="rgb(190, 197, 212)" i]
+  ) {
+  color: var(--cobalt2-native-fg) !important;
+}
+
+:is(.monaco-editor, .monaco-diff-editor)
+  span:is(
+    [style*="#5f7e97" i],
+    [style*="#b2ccd6" i],
+    [style*="rgb(95, 126, 151)" i],
+    [style*="rgb(178, 204, 214)" i]
+  ) {
+  color: var(--cobalt2-native-muted) !important;
+}
+
+:is(.monaco-editor, .monaco-diff-editor)
+  span:is([style*="#637777" i], [style*="rgb(99, 119, 119)" i]) {
+  color: var(--cobalt2-native-comment) !important;
+  font-style: italic !important;
+}
+
+:is(.monaco-editor, .monaco-diff-editor)
+  span:is([style*="#c792ea" i], [style*="rgb(199, 146, 234)" i]) {
+  color: var(--cobalt2-native-keyword) !important;
+  font-style: italic !important;
+}
+
+:is(.monaco-editor, .monaco-diff-editor)
+  span:is([style*="#82aaff" i], [style*="rgb(130, 170, 255)" i]) {
+  color: var(--cobalt2-native-blue) !important;
+}
+
+:is(.monaco-editor, .monaco-diff-editor)
+  span:is([style*="#c5e478" i], [style*="rgb(197, 228, 120)" i]) {
+  color: var(--cobalt2-native-string) !important;
+}
+
+:is(.monaco-editor, .monaco-diff-editor)
+  span:is(
+    [style*="#7fdbca" i],
+    [style*="#80cbc4" i],
+    [style*="rgb(127, 219, 202)" i],
+    [style*="rgb(128, 203, 196)" i]
+  ) {
+  color: var(--cobalt2-native-type) !important;
+}
+
+:is(.monaco-editor, .monaco-diff-editor)
+  span:is([style*="#ffcb8b" i], [style*="rgb(255, 203, 139)" i]) {
+  color: var(--cobalt2-native-function) !important;
+}
+
+:is(.monaco-editor, .monaco-diff-editor)
+  span:is(
+    [style*="#ecc48d" i],
+    [style*="#f78c6c" i],
+    [style*="#ff5874" i],
+    [style*="rgb(236, 196, 141)" i],
+    [style*="rgb(247, 140, 108)" i],
+    [style*="rgb(255, 88, 116)" i]
+  ) {
+  color: var(--cobalt2-native-constant) !important;
 }
 /* codex-cobalt2-markdown-overrides:end */

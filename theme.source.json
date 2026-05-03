@@ -2,9 +2,9 @@
   "$schema": "./theme.schema.json",
   "name": "Cobalt Gold for Codex",
   "variant": "dark",
-  "description": "A Cobalt2-inspired Codex Desktop appearance theme with gold-on-navy chrome and runtime Markdown styling.",
+  "description": "A Cobalt2-inspired Codex Desktop appearance theme with gold-on-navy chrome and runtime Markdown/editor styling.",
   "author": "ChainShield AI",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "codexDesktop": {
     "codeThemeId": "ayu",
     "surface": "#193549",
@@ -21,8 +21,8 @@
     "codeFontFamily": "Operator Mono, VictorMono Nerd Font Mono, VictorMono Nerd Font, JetBrainsMono Nerd Font Mono, JetBrainsMono Nerd Font, FiraCode Nerd Font Mono, Fira Code, SF Mono, Menlo, Monaco, Consolas, monospace"
   },
   "fontSizes": {
-    "sansFontSize": 14,
-    "codeFontSize": 15
+    "sansFontSize": 20,
+    "codeFontSize": 24
   },
   "palette": {
     "blue": "#193549",

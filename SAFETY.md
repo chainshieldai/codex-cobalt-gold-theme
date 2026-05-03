@@ -3,11 +3,11 @@
 This package has two layers:
 
 1. A Codex Desktop Appearance import string.
-2. Optional runtime Markdown CSS injection.
+2. Optional runtime Markdown/editor CSS injection.
 
 The Appearance import string is the safest path and uses Codex Desktop's own importer.
 
-The runtime Markdown path is experimental but intentionally reversible. It launches Codex with a localhost-only Chrome DevTools Protocol endpoint and injects a `<style>` tag into live renderer documents.
+The runtime CSS path is experimental but intentionally reversible. It launches Codex with a localhost-only Chrome DevTools Protocol endpoint and injects a `<style>` tag into live renderer documents.
 
 ## What It Does Not Do
 

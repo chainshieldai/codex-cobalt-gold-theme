@@ -1,8 +1,8 @@
 {
   "name": "Cobalt Gold for Codex",
-  "description": "A Cobalt2-inspired Codex Desktop appearance theme with gold-on-navy chrome and runtime Markdown styling.",
+  "description": "A Cobalt2-inspired Codex Desktop appearance theme with gold-on-navy chrome and runtime Markdown/editor styling.",
   "author": "ChainShield AI",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "variant": "dark",
   "codeThemeId": "ayu",
   "theme": {
@@ -21,8 +21,8 @@
       "skill": "#FF68B8"
     }
   },
-  "sansFontSize": 14,
-  "codeFontSize": 15,
+  "sansFontSize": 20,
+  "codeFontSize": 24,
   "palette": {
     "blue": "#193549",
     "blueDark": "#122738",

@@ -1,7 +1,7 @@
 {
   "name": "codex-cobalt-gold-theme",
-  "version": "0.4.0",
-  "description": "Cobalt2-inspired Codex Desktop theme with safe runtime Markdown styling.",
+  "version": "0.4.1",
+  "description": "Cobalt2-inspired Codex Desktop theme with safe runtime Markdown and editor styling.",
   "type": "module",
   "license": "MIT",
   "author": "ChainShield AI",

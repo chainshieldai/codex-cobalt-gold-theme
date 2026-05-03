@@ -23,10 +23,11 @@ Then open Codex Desktop Settings > Appearance > Dark theme > Import.
 Recommended values:
 
 ```text
-UI font size: 14 px
-Code font size: 15 px
+UI font size: 20 px
+Code font size: 24 px
 Code font family: Operator Mono, VictorMono Nerd Font Mono, VictorMono Nerd Font, JetBrainsMono Nerd Font Mono, JetBrainsMono Nerd Font, FiraCode Nerd Font Mono, Fira Code, SF Mono, Menlo, Monaco, Consolas, monospace
 UI font family: SF Pro Text, Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif
+Dark code theme: night-owl
 ```
 
 Apply them:
@@ -35,11 +36,11 @@ Apply them:
 npm run apply:fonts
 ```
 
-Restart Codex Desktop so every pane reloads the global font settings.
+Restart Codex Desktop so every pane reloads the global font and native code-theme settings.
 
-## Runtime Markdown CSS
+## Runtime Markdown And Editor CSS
 
-Markdown styling cannot be imported through the Appearance dialog. Do not paste raw CSS into the importer.
+Markdown/editor styling cannot be imported through the Appearance dialog. Do not paste raw CSS into the importer.
 
 Safe isolated test:
 
@@ -62,4 +63,4 @@ Stop the runtime watcher:
 npm run stop:runtime-css
 ```
 
-Restarting Codex removes the runtime CSS.
+Restarting Codex removes the runtime CSS unless it is launched again through `npm run start:runtime-css` or `~/codex.sh`.

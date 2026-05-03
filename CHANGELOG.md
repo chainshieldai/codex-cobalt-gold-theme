@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.1
+
+- Increased default Codex UI and code font sizes for better readability.
+- Made the runtime launcher re-apply native Codex font settings and the brighter `night-owl` code editor theme before launch.
+- Added a runtime brightness boost for Codex's native editor pane so Night Owl tokens render closer to Cobalt2's brighter nvim palette.
+- Expanded runtime CSS coverage for rendered Markdown, diff/source panes, inline code, and fenced code blocks.
+- Kept the safety model unchanged: no ASAR patching, no app-bundle mutation, and no bundled fonts.
+
 ## 0.4.0
 
 - Renamed the public package surface to Cobalt Gold for Codex.

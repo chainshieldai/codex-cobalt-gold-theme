@@ -1,6 +1,6 @@
 # Cobalt Gold for Codex
 
-A Cobalt2-inspired dark theme package for Codex Desktop: gold-on-navy chrome, Operator Mono-first code typography, and optional runtime Markdown styling.
+A Cobalt2-inspired dark theme package for Codex Desktop: gold-on-navy chrome, Operator Mono-first code typography, and optional runtime Markdown/editor styling.
 
 This is a community package. It is not affiliated with OpenAI or Wes Bos, and it does not bundle Operator Mono or any other commercial font.
 
@@ -9,14 +9,15 @@ This is a community package. It is not affiliated with OpenAI or Wes Bos, and it
 - A pasteable Codex Desktop Appearance import string.
 - A font settings helper for Codex Desktop's global font preferences.
 - Runtime Markdown CSS for rendered chat/report Markdown.
-- A safe launcher that injects Markdown CSS into memory only.
+- A safe launcher that injects Markdown and editor-brightness CSS into memory only.
+- A brighter native editor setup using Codex's built-in `night-owl` code theme plus a Cobalt2 brightness boost.
 - Audit notes explaining why app-bundle and ASAR patching are intentionally avoided.
 
 ## Safety Model
 
 The normal theme import uses Codex Desktop's Appearance importer.
 
-The optional Markdown styling uses Chrome DevTools Protocol against a Codex process launched with a localhost-only debug port. It inserts a `<style>` tag into live renderer documents. It does not modify `/Applications/Codex.app`, does not repack `app.asar`, and does not change code signatures.
+The optional runtime styling uses Chrome DevTools Protocol against a Codex process launched with a localhost-only debug port. It inserts a `<style>` tag into live renderer documents. It does not modify `/Applications/Codex.app`, does not repack `app.asar`, and does not change code signatures.
 
 Rollback is simple:
 
@@ -78,7 +79,7 @@ npm run apply:fonts
 
 Restart Codex after applying fonts. The script creates a backup beside Codex's global state file before writing.
 
-## Runtime Markdown Styling
+## Runtime Markdown And Editor Styling
 
 First test with an isolated Codex profile:
 
@@ -93,7 +94,7 @@ After that looks good, use the normal profile:
 npm run start:runtime-css
 ```
 
-Important: quit Codex completely before running `start:runtime-css` if Codex was opened normally from the Dock or Spotlight. The launcher starts Codex with the required localhost debug port and starts the CSS watcher.
+Important: quit Codex completely before running `start:runtime-css` if Codex was opened normally from the Dock or Spotlight. The launcher applies the recommended native font/code-theme settings, starts Codex with the required localhost debug port, and starts the CSS watcher.
 
 Stop the watcher:
 
@@ -110,6 +111,7 @@ npm run stop:runtime-css
 - Emphasis: amber
 - Inline code: gold on deep navy
 - Fenced code: deep navy with a gold inset rule
+- Native editor pane: built-in `night-owl` with brighter Cobalt2 token overrides
 
 ## Files
 

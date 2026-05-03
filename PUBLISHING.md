@@ -5,11 +5,11 @@
 1. Create a public repository named `codex-cobalt-gold-theme`.
 2. Push this package.
 3. Add screenshots to the README or GitHub release.
-4. Tag the first public release:
+4. Tag each public release:
 
    ```bash
-   git tag v0.4.0
-   git push origin v0.4.0
+   git tag v0.4.1
+   git push origin v0.4.1
    ```
 
 ## npm
