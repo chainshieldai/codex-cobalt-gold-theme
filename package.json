@@ -59,6 +59,7 @@
     "stop:runtime-css": "node scripts/stop-runtime-css.mjs",
     "prepack": "npm run build && npm run validate",
     "pack:dry-run": "npm pack --dry-run",
+    "test": "node --test tests/*.test.mjs",
     "validate": "node scripts/validate-theme.mjs",
     "watch:runtime-css": "node scripts/inject-runtime-css.mjs --watch"
   }

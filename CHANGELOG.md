@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Prevented broad code selectors from applying Operator Mono to ordinary Codex chat prose.
+
 ## 0.4.1
 
 - Increased default Codex UI and code font sizes for better readability.
